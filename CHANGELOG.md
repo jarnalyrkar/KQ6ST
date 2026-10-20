@@ -7,6 +7,11 @@ grouped by date. Details and the reasoning behind each fix are in
 
 ## [Unreleased]
 
+### Added
+- Real-hardware check before a release: `tools/hatari/hc.sh -acsi` runs the game from an ACSI hard-disk
+  image with the AHDI driver (`tools/acsiput.py` puts the folder on it). v0.1.0 passes it: boots, plays,
+  saves and restores; none of the KQ5 ST real-hardware bugs apply (PROJECT.md "Testing like real hardware").
+
 ## [0.1.0] - 2026-10-20
 
 First release: a ready-to-play hard-disk folder (`KQ6ST-v0.1.0.zip`), built with

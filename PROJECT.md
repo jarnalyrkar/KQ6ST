@@ -769,6 +769,24 @@ Still wanted:
   saves around an event shows what the event changes (used for the cliffs skip).
 - `tools/prgdis.py` – capstone disassembly of a TOS PRG text segment (`work/sierra.s`).
 
+### Testing like real hardware (ACSI image)
+
+Hatari's GEMDOS drive (`-d`) is not what a real ST does: TOS's own GEMDOS on a hard disk loads the program
+at a different address (2 mod 4 instead of 0 mod 4 – this crashed KQ5 ST v0.1.1 on real hardware and Steem),
+is slower, and has fewer file handles. Before a release, also run the release folder from an ACSI image with a
+real driver (AHDI 6.061 image from Steem SSE in `../KingsQuest5ST`):
+
+    cp ../KingsQuest5ST/Steem.SSE.4.2.0.Linux64/ACSI/SH204.img hd.img
+    python3 -I tools/acsiput.py hd.img <unpacked release>/KQ6ST KQ6ST
+    tools/hatari/hc.sh <script> -acsi hd.img 'C:\KQ6ST\SIERRA.PRG'
+
+`-acsi` turns off Hatari's GEMDOS drive (a copy of `~/.config/hatari/hatari.cfg`, else it takes C:). Script:
+~40 s to the first disclaimer, Esc, Esc, Return (Play), ~20 s, Return (welcome box).
+Checked 2026-10-20 for v0.1.0 against the three KQ5 ST real-hardware bugs: no NatFeats in our code (KQ5's
+unguarded `$7300` gave 4 bombs); all addresses in `slots/` are relocated from the load address (`B +` in
+`slots.ld.in`, nothing assumes long alignment); 10 files in the folder, so no slow lookups. From the ACSI image
+the game boots, plays, saves (`\kq6st\sg.1`, default path = the game folder) and restores.
+
 ### Brandon's debug steps
 
 `debugging-steps.txt` (from Brandon, added 2026-10-18): how to skip each crash scene with debug
