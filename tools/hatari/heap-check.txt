@@ -1,0 +1,10 @@
+setopt --fast-forward on
+sleep 8
+keypress 77
+sleep 1
+keypress 28
+sleep 10
+keypress 28
+sleep 3
+parse @HATARI@/heap.ini
+shot c1

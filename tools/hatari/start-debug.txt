@@ -1,0 +1,18 @@
+# Title -> Esc, Esc (skip texts) -> Return (Play is preselected) -> dismiss welcome -> debug mode on. Append test steps.
+setopt --fast-forward on
+sleep 3
+keypress 01
+sleep 3
+keypress 01
+sleep 4
+keypress 28
+sleep 10
+keypress 28
+sleep 3
+setopt --fast-forward off
+type maplemeatloaf
+sleep 1
+keypress 28
+sleep 4
+keypress 28
+sleep 3

@@ -1,0 +1,40 @@
+setopt --fast-forward on
+sleep 8
+keypress 77
+sleep 1
+keypress 28
+sleep 10
+keypress 28
+sleep 3
+setopt --fast-forward off
+type restore game
+keypress 28
+sleep 3
+keypress 28
+sleep 3
+keypress 28
+sleep 3
+keypress 28
+sleep 10
+shot m1
+type give milk
+keypress 28
+sleep 2
+shot m2
+sleep 2
+shot m3
+sleep 3
+keypress 28
+sleep 3
+shot m4
+keypress 28
+sleep 2
+shot m5
+sleep 2
+shot m6
+sleep 4
+shot m7
+parse @HATARI@/bomb.ini
+sleep 3
+sleep 6
+shot m8

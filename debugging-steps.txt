@@ -1,0 +1,64 @@
+Start in the catcombs room with the tapestry right before the minotaur lair:
+2. "maplemeatloaf"
+3. Take whatever your current score is, and add 4 to it.
+4. "set var"   "3"   then type the added number. For example, if score was 100, type "104"
+5. "set var"   "163"   "2"
+6. "get object"   "43"
+7. "tp"   "25"
+8. You should now be outside the lair and picked up by the winged ones. You will get to see the oracle etc. Once you are dropped off at the beach, DO NOT move and DO NOT use the magic map.
+9. "tp"   "2"
+10. You should now be on Isle of the Crown beach.
+11. "reset flag"   "32"
+12. Walk north to the tree to clear the debugger from memory, and you should be good to go.
+
+If these steps do not work and the game still crashes from memory (which is highly probable with the added load of the debugger) you may need to bypass all the animated sequences entirely. The following steps will bypass it, but still give you the appropriate points along with the dagger and sacred water in inventory. The minotaur will be killed, and other appropriate game events will be triggered. Follow exactly:
+
+1. Start in the catacombs room with the tapestry right before the minotaur lair.
+2. "maplemeatloaf"
+3. Take whatever your current score is and add 10 to it.
+4. "set var"   "3"  then type the added number. For example, if score was 100, type "110"
+5. "set flag"   "117"
+6. "set flag"   "75"
+7. "set flag"   "114"
+8. "get object"   "43"
+9. "get object"   "33"
+10. Stand in the center of the tapestry room, then walk to the north wall, hitting it.
+11. "tp"   "2"
+12. You should now be on the Isle of the Crown beach.
+13. "reset flag"   "32"
+14. Walk north to the tree to clear the debugger from memory, and you should be good to go. Isle of the Mists should be on the map, drink me bottle on the table in the garden, Jollo in the bookstore, and genie in the pawn shop. These are events that happen after defeating the minotaur.
+
+1. Stand on the Isle of the Crown Beach (any screen should hopefully work)
+2. "maplemeatloaf"
+3. "tp"    "232"
+4. You should now be in the inset with Alexander in the cage. For some reason, when directly jumping to this using the debug, Alexander's head may be missing, or it may be fine. Not to worry either way. Hopefully the druid conversation after the storm shouldn't have any issues as it is in a dedicated part of the program specifically designed to remedy memory issues.
+5. After the conversation and the druids leave, type "reset flag"    "32" and walk to another screen to clear the debug. Hopefully you should be set after that!
+
+1. After getting the river styx water, go back one screen to the knight.
+2. "maplemeatloaf"
+3. Add 3 to your score for giving the coins (if you want) then "set var"   "3"  and the new score.
+4. "tp"   "48"
+5. You should now be on the screen with the gate.
+6. "reset flag"   "32"
+
+1. "maplemeatloaf"
+2. add 6 to your score for showing gauntlet and mirror "set var"   "3"  then the new score.
+3 "set flag"   "166" (this sets that the entire realm of the dead has been completed and is essential for it to know that you're doing the long path)
+4. "tp"   "228" to see the ending animation on the beach. "2" to go straight to the beach instead if you want to skip it.
+5. "reset flag"   "32" Walk north to clear debug.
+
+Skip the magical castle door (which gives four bombs if you type open)
+1. "maplemeatloaf"
+2. Opening the door gives you two points. So, "set var"    "3"  and then type your current score plus two.
+3. "tp"   "51"  You should now be in the castle with the door fading away.
+4. "reset flag"  "32"
+
+Tower before the sword fight:
+ 1. Start in the basement with all necessary things completed (gave lamp to Jollo, gave dagger, and looked at all treasures individually) You could start this while the guards are slowly chasing you upstairs as the wedding is starting, or anywhere you have a save game after that point.
+2. "maplemeatloaf"
+3. Jollo handing you the lamp and you capturing the genie is worth 6 points. So if you want the points: "set var"  "3" and then your score plus 6.
+4. "set flag"  "247"  (this makes it so that you "saved" the genie in the lamp)
+5. "tp"   "111"  (this will take you directly to the start of the sword fight). If you want to jump straight to the wedding type "112" instead of "111." (but then you won't get points from the sword fight)
+6. Hopefully, you should see royal family, genie, cassima parents, jollo, and island rulers. Plus the debug was invited to the wedding! This will be the ultimate test. I doubt it will make it.
+show letter to Saladin: 3 points
+reveal genie's identity (by Cassima's parents): 5

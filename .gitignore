@@ -1,0 +1,19 @@
+# Everything in the project root is local unless listed below (PP's ST release, Brandon's DOS
+# release, the built game folder with save games, extracted files and test output).
+/*
+!/.gitignore
+!/README.md
+!/CHANGELOG.md
+!/LICENSE
+!/PROJECT.md
+!/CLICK-TO-INTERACT.md
+!/BUGS-FOR-BRANDON.txt
+!/encountered-bugs.txt
+!/debugging-steps.txt
+!/bug-images/
+!/media/
+!/tools/
+
+__pycache__/
+*.pyc
+*.log

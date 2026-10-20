@@ -1,0 +1,45 @@
+/* Generated per link by patchslots.py: B = load base, BSHIFT = bytes added in front of the BSS. */
+B = @BASE@;
+BSHIFT = @BSHIFT@;
+/* interpreter functions (text) */
+read_slot   = B + 0x3996;  print_entry = B + 0x3916;  gotorc     = B + 0xa92a;
+open_win    = B + 0x8b04;  close_win   = B + 0x8d1a;  str_cpy    = B + 0x2080;
+str_cmp     = B + 0x2102;  s_printf    = B + 0x933c;  msgbox     = B + 0x865a;
+before_msg  = B + 0x92b6;  mouse_hide  = B + 0x6422;  mouse_show = B + 0x63ac;
+mouse_poll  = B + 0x644a;  tick        = B + 0x247e;  ev_poll_   = B + 0x2514;
+ev_wait_    = B + 0x2560;  stop_sound = B + 0xb9ea;  ev_take     = B + 0x26ce;  get_drv    = B + 0x28a0;
+is_flag     = B + 0x2be4;  menu_input  = B + 0x52f8;  ev_cycle   = B + 0xca86;
+ptr_draw    = B + 0xe510;  blit_orig   = B + 0xdf40;  ev_post    = B + 0x24ac;
+parse_str   = B + 0x7022;  disp_orig  = B + 0x9144;  msg_text   = B + 0x90ca;
+line_in     = B + 0xc22c;  get_key    = B + 0x265a;  inv_mark   = B + 0xbf00;
+inv_start_orig = B + 0x678c;  str_len = B + 0x205e;  walk_orig = B + 0x6236;
+/* data segment (below 0x125c0, does not move) */
+auto_flag = B + 0xef4c;  auto_name = B + 0xf85c;  save_dir  = B + 0xef7a;  empty_str = B + 0xf172;
+m_nogames = B + 0xf11e;  m_entry   = B + 0xef4e;  m_eeee    = B + 0xeeee;
+m_save    = B + 0xf08c;  m_restore = B + 0xf0c0;
+mouse_x   = B + 0xec00;  mouse_y   = B + 0xec02;  mouse_x2  = B + 0xfe3a;  mouse_y2 = B + 0xfe3c;
+screen_mode = B + 0xed7e; ticks = B + 0xfa60;
+snd_chan  = B + 0xf5fc;  snd_playing = B + 0x1008a;
+ptr_flags = B + 0xebfe;  screen    = B + 0xf554;  mouse_xmax = B + 0xf4da;  mouse_ymax = B + 0xf4de;
+play_top  = B + 0xebf6;  no_mouse_lim = B + 0xf22e;  text_menu_ok = B + 0xf46c;
+horizon = B + 0xfa4e;  blk_on = B + 0xfa50;  blk_x1 = B + 0xfa52;  blk_y1 = B + 0xfa54;
+blk_x2 = B + 0xfa56;  blk_y2 = B + 0xfa58;
+agi_vars  = B + 0xf92a;  f46c      = B + 0xf46c;  input_on  = B + 0xfa6a;  player_ctl = B + 0xfa4a;  ff0a      = B + 0xff0a;
+/* BSS (moves up by BSHIFT) */
+last_desc = B + BSHIFT + 0x141d4;  str_1402e = B + BSHIFT + 0x1402e;  win_top = B + BSHIFT + 0x1408a;
+win_left  = B + BSHIFT + 0x1408c;  mouse_on  = B + BSHIFT + 0x140f4;  drv_save = B + BSHIFT + 0x14276;
+heap_top  = B + BSHIFT + 0x14096;  snd_list  = B + BSHIFT + 0x13fc2;
+menu_req  = B + BSHIFT + 0x14014;  menu_mouse = B + BSHIFT + 0x14082;  menu_state = B + BSHIFT + 0x140f2;
+text_mode = B + BSHIFT + 0x14018;  line_off = B + BSHIFT + 0x13ad2;
+saved     = B + BSHIFT + 0x139d2;  back_buf  = B + BSHIFT + 0x13f04;
+win_pos   = B + BSHIFT + 0x14000;  win_size  = B + BSHIFT + 0x14300;
+mse_vx    = B + BSHIFT + 0x13f00;  mse_vy    = B + BSHIFT + 0x13f02;
+dlg_busy  = B + BSHIFT + 0x140b8;  obj_tab   = B + BSHIFT + 0x142bc;  obj_last = B + BSHIFT + 0x14282;
+prio_buf  = B + BSHIFT + 0x13f08;
+/* pathfinding buffers (pf.c), added after the old BSS end 0x14380 (patchslots.py PFSIZE) */
+pf_grid   = B + BSHIFT + 0x14380;  pf_queue  = pf_grid + 160 * 168;
+SECTIONS {
+  . = B + @ORG@;
+  .blob : { *(.text.select_slot) *(.text*) *(.rodata*) *(.data*) *(.bss*) *(COMMON) }
+  /DISCARD/ : { *(.comment) *(.note*) *(.eh_frame*) }
+}

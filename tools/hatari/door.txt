@@ -1,0 +1,47 @@
+setopt --fast-forward on
+sleep 8
+keypress 77
+sleep 1
+keypress 28
+sleep 10
+keypress 28
+sleep 3
+setopt --fast-forward off
+type maplemeatloaf
+keypress 28
+sleep 4
+keypress 28
+sleep 3
+type set flag
+keypress 28
+sleep 3
+type 254
+keypress 28
+sleep 3
+type tp
+keypress 28
+sleep 3
+type 6
+keypress 28
+sleep 12
+shot d1
+type pos
+keypress 28
+sleep 3
+type 76
+keypress 28
+sleep 3
+type 104
+keypress 28
+sleep 3
+shot d2
+type open door
+shot d3
+keypress 28
+sleep 4
+shot d4
+sleep 4
+shot d5
+sleep 6
+shot d6
+parse @HATARI@/bomb.ini
