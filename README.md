@@ -5,6 +5,10 @@ Bug fixes and mouse controls for the Atari ST version of Brandon Kouri's
 
 ![Isle of the Crown beach, running on an emulated Atari STE](media/beach.png)
 
+**Want to play?** Download the zip from [Releases](https://github.com/jarnalyrkar/KQ6ST/releases).
+It holds a ready game folder for an Atari ST/STE hard disk, Hatari or Steem SSE, with
+instructions in `READ_ME.TXT`.
+
 ## Background
 
 In 2024 **Brandon Kouri** finished *King's Quest VI AGI Demake*, an 18-year effort (2006–2024)
@@ -75,6 +79,7 @@ The repository holds **only the project's own work**: patches, tools and notes. 
 | [`PROJECT.md`](PROJECT.md) | The development notes: current state, who made what, all findings about the ST interpreter and the game scripts, the bug table, how a fix gets onto the ST, the tools and the Hatari test harness. **Start here.** |
 | [`CLICK-TO-INTERACT.md`](CLICK-TO-INTERACT.md) | Design notes for click to interact. |
 | [`tools/mkhd.sh`](tools/mkhd.sh) | Builds the patched hard-disk game folder from the ST disk image `E.ST`. |
+| `tools/mkrelease.sh`, `tools/READ_ME.TXT` | Packs a fresh game folder and the player's readme into the release zip. |
 | [`tools/slots/`](tools/slots) | New interpreter code in C (save slots, heap release, mouse menu, pointer, sprite blit, click to interact and pathfinding, number menus, inventory picker) and its linker script. Hotspots per island in `tools/slots/hotspots/`. |
 | `tools/patchheap.py`, `tools/patchslots.py` | Interpreter patches: they check the original bytes, then link in the new code. |
 | `tools/logicpatches.py`, `tools/agipatch.py`, `tools/wordpatches.py` | Game-script and vocabulary patches. |
@@ -100,6 +105,9 @@ hatari --machine ste --memsize 4096 -d build/KQ6ST-HD --auto 'C:\SIERRA.PRG'
 `build/KQ6ST-HD` is a game folder for an ST hard disk (or Hatari/Steem GEMDOS drive): start
 `SIERRA.PRG` from it. `MG.PRG` must stay next to it (the interpreter's copy check looks for it),
 and save games are written to the same folder. Do not use Petari's loader with this folder.
+
+`tools/mkrelease.sh <E.ST> VERSION` builds a fresh folder (without save games) and packs it into
+`dist/KQ6ST-VERSION.zip` for a release.
 
 ## Copyright and licences
 

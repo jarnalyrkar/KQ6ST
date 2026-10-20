@@ -1,15 +1,21 @@
 # Changelog
 
 All notable changes to the project. The format follows
-[Keep a Changelog](https://keepachangelog.com/en/1.1.0/). There are no numbered releases yet, so
-the changes are grouped by date. Details and the reasoning behind each fix are in
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Changes before the first release are
+grouped by date. Details and the reasoning behind each fix are in
 [`PROJECT.md`](PROJECT.md) (the "findings" numbers below refer to its findings list).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-20
+
+First release: a ready-to-play hard-disk folder (`KQ6ST-v0.1.0.zip`), built with
+`tools/mkrelease.sh` from the unmodified ST disk image. It contains everything below.
+
 ### 2026-10-20
 
 #### Added
+- `tools/mkrelease.sh` and the player's `READ_ME.TXT` for release zips.
 - Click to interact: a right click or double click on something in a room types its command
   ("get ring", "open box" …) and the room's own script does the rest. Alexander first walks to
   where the script allows the action. 347 hotspots in all 51 rooms that have commands
@@ -67,3 +73,6 @@ the changes are grouped by date. Details and the reasoning behind each fix are i
 - G8: 2 bombs when giving the milk to the baby's tears. Releasing heap memory now cuts the sound
   list, which could point into freed memory (findings 15).
 - G7: trading in the pawn shop after using the arrow keys gave the map talk and lost the item.
+
+[Unreleased]: https://github.com/jarnalyrkar/KQ6ST/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/jarnalyrkar/KQ6ST/releases/tag/v0.1.0
